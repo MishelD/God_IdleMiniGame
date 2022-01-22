@@ -12,6 +12,14 @@ public class GridManagement : MonoBehaviour
 
     private void Start()
     {
+        GenerateMap();
+
+        // Центрирование камеры
+        Camera.main.transform.position = new Vector3(mapWidth / 2 + .5f, mapHeight / 2 - .5f, -10);
+    }
+
+    private void GenerateMap()
+    {
         for (int i = 0; i < mapWidth; i++)
         {
             for (int j = 0; j < mapHeight; j++)
@@ -23,7 +31,6 @@ public class GridManagement : MonoBehaviour
         {
             tilemap.SetTile(new Vector3Int(i, -1, 0), tiles[Mathf.RoundToInt(Random.Range(4, 6))]);
         }
-        Camera.main.transform.position = new Vector3(mapWidth / 2 + .5f, mapHeight / 2, -10);
     }
 
 }
