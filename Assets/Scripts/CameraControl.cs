@@ -11,7 +11,7 @@ public class CameraControl : MonoBehaviour
 
     private void Update()
     {
-        // Перемещение камеры
+        // Camera movement
 
         mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition).normalized;
 
@@ -34,7 +34,7 @@ public class CameraControl : MonoBehaviour
             Camera.main.transform.position = startPos - (mouseDownPos - mousePos) * (-1 * mouseSencity);
         }
 
-        // Масштабирование камеры
+        // Camera zoom
 
         if (Input.GetAxis("Mouse ScrollWheel") > 0 && Camera.main.orthographicSize - Input.GetAxis("Mouse ScrollWheel") > 1.1f)
         {
