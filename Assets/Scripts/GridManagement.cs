@@ -14,7 +14,7 @@ public class GridManagement : MonoBehaviour
     {
         GenerateMap();
 
-        // Центрирование камеры
+        // Centering the camera
         Camera.main.transform.position = new Vector3(mapWidth / 2 + .5f, mapHeight / 2 - .5f, -10);
     }
 

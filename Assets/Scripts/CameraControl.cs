@@ -9,9 +9,11 @@ public class CameraControl : MonoBehaviour
     [Range(0.1f, 10f)]
     [SerializeField] private float mouseSencity = 2f;
 
+    public static bool canIsDrag = true;
+
     private void Update()
     {
-        // Перемещение камеры
+        // Camera movement
 
         mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition).normalized;
 
@@ -29,12 +31,12 @@ public class CameraControl : MonoBehaviour
             startPos = Camera.main.transform.position;
         }
 
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButton(0) && canIsDrag)
         {
             Camera.main.transform.position = startPos - (mouseDownPos - mousePos) * (-1 * mouseSencity);
         }
 
-        // Масштабирование камеры
+        // Camera zoom
 
         if (Input.GetAxis("Mouse ScrollWheel") > 0 && Camera.main.orthographicSize - Input.GetAxis("Mouse ScrollWheel") > 1.1f)
         {
