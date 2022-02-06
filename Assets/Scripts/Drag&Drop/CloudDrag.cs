@@ -8,7 +8,7 @@ public class CloudDrag : MonoBehaviour
 
     private void Awake()
     {
-        mousePos.z = -1;
+        mousePos.z = 0;
     }
 
     private void Update()
