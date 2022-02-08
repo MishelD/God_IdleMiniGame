@@ -51,7 +51,6 @@ public class PlacementWheat : MonoBehaviour, IPointerClickHandler
             Instantiate(wheat, new Vector3(Mathf.Round(position.x), Mathf.Round(position.y), 0), Quaternion.identity);
             placementTemp[(int)Mathf.Round(position.x), (int)Mathf.Round(position.y)] = 1;
         }
-        else Debug.LogWarning("Can't place wheat");
     }
 
     public static void ChooseStateCanPlace()
